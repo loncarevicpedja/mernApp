@@ -30,7 +30,7 @@ app.use(cookieParser());
 app.use("/uploads", express.static(__dirname + "/uploads"));
 
 mongoose.connect(
-  "mongodb+srv://loncarevicpedja:predrag21.07.2000.@cluster0.sedu4sh.mongodb.net/?retryWrites=true&w=majority"
+  "mongodb+srv://loncarevicpedja:predrag21.07.2000.@cluster0.sedu4sh.mongodb.net/test?retryWrites=true&w=majority"
 );
 
 const transporter = nodemailer.createTransport({
@@ -487,9 +487,9 @@ app.post("/dislike/:postId", async (req, res) => {
     res.status(500).json({ error: "Server error." });
   }
 });
-if (process.env.API_PORT) {
-  app.listen(process.env.API_PORT);
-}
+
+app.listen(4000);
+
 module.exports = app;
 
 //predrag21.07.2000.
