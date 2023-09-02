@@ -485,7 +485,6 @@ app.post("/dislike/:postId", async (req, res) => {
 if (process.env.API_PORT) {
   app.listen(process.env.API_PORT);
 }
-
 module.exports = app;
 
 //predrag21.07.2000.
