@@ -14,8 +14,7 @@ export default function IndexPage() {
   }, []);
 
   useEffect(() => {
-    const url = `https://mern-app-api.vercel.app/exhibition`;
-    fetch(url)
+    fetch("https://mern-app-api.vercel.app/exhibition")
       .then((response) => response.json())
       .then((data) => {
         setExhibitions(data);
