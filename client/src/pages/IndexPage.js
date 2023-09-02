@@ -14,7 +14,7 @@ export default function IndexPage() {
   }, []);
 
   useEffect(() => {
-    const url = `${process.env.REACT_APP_API_URL}/exhibition`;
+    const url = `https://mern-app-api.vercel.app/exhibition`;
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
@@ -24,7 +24,7 @@ export default function IndexPage() {
         console.error("Error fetching exhibitions:", error);
       });
 
-    fetch("http://localhost:4000/news")
+    fetch("https://mern-app-api.vercel.app/news")
       .then((response) => response.json())
       .then((n) => {
         setNews(n);
@@ -35,7 +35,7 @@ export default function IndexPage() {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:4000/post").then((response) => {
+    fetch("https://mern-app-api.vercel.app/post").then((response) => {
       response.json().then((posts) => {
         setPosts(posts);
       });
