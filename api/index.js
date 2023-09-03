@@ -22,7 +22,7 @@ const secret = "dsad32dq";
 app.use(
   cors({
     credentials: true,
-    origin: "https://mern-app-frontend-green.vercel.app",
+    origin: "https://mern-app-frontend-mutox29m1-loncarevicpedja9-gmailcom.vercel.app",
   })
 );
 
