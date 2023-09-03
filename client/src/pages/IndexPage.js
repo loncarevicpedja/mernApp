@@ -14,9 +14,9 @@ export default function IndexPage() {
   }, []);
 
   useEffect(() => {
-    fetch(
-      "https://mern-app-lqi0cg76g-loncarevicpedja9-gmailcom.vercel.app/exhibition"
-    )
+    const url =
+      "https://mern-app-lqi0cg76g-loncarevicpedja9-gmailcom.vercel.app/exhibition";
+    fetch(url)
       .then((response) => response.json())
       .then((data) => {
         setExhibitions(data);
