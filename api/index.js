@@ -22,9 +22,10 @@ const secret = "dsad32dq";
 app.use(
   cors({
     credentials: true,
-    origin: "https://mern-app-frontend-gamma.vercel.app/",
+    origin: "https://mern-app-frontend-gamma.vercel.app",
   })
 );
+app.options("*", cors());
 app.use(express.json());
 app.use(cookieParser());
 app.use("/uploads", express.static(__dirname + "/uploads"));
