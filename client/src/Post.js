@@ -29,7 +29,7 @@ export default function Post({
   }, []);
   function Like() {
     const postId = _id;
-    fetch(`http://localhost:4000/like/${postId}`, {
+    fetch(`https://mern-app-api.vercel.app/${postId}`, {
       method: "POST",
       body: JSON.stringify({ userId }),
       headers: {
@@ -48,7 +48,7 @@ export default function Post({
   }
   function Dislike() {
     const postId = _id; // Promenjeno ovde
-    fetch(`http://localhost:4000/dislike/${postId}`, {
+    fetch(`https://mern-app-api.vercel.app/${postId}`, {
       method: "POST",
       body: JSON.stringify({ userId }),
       headers: {
@@ -70,7 +70,7 @@ export default function Post({
     e.preventDefault();
     const id = _id;
     console.log(id);
-    fetch(`http://localhost:4000/delete/${id}`, {
+    fetch(`https://mern-app-api.vercel.app/${id}`, {
       method: "DELETE",
       credentials: "include",
     })

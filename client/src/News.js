@@ -17,7 +17,7 @@ export default function News({
     e.preventDefault();
     const id = _id;
     console.log(id);
-    fetch(`http://localhost:4000/deletenews/${_id}`, {
+    fetch(`https://mern-app-api.vercel.app/deletenews/${_id}`, {
       method: "DELETE",
       credentials: "include",
     })
@@ -39,7 +39,7 @@ export default function News({
     <div className="news">
       <div className="news-image">
         <Link to={`/news/${_id}`}>
-          <img src={"http://localhost:4000/" + cover} alt=""></img>
+          <img src={"https://mern-app-api.vercel.app/" + cover} alt=""></img>
         </Link>
       </div>
       <div className="news-content">
