@@ -15,7 +15,7 @@ export default function IndexPage() {
 
   useEffect(() => {
     fetch(
-      "https://mern-app-ujee-dsrhw0npz-loncarevicpedja9-gmailcom.vercel.app/exhibition"
+      "https://mern-app-api.vercel.app/exhibition"
     )
       .then((response) => response.json())
       .then((data) => {
@@ -26,7 +26,7 @@ export default function IndexPage() {
       });
 
     fetch(
-      "https://mern-app-ujee-dsrhw0npz-loncarevicpedja9-gmailcom.vercel.app/news"
+      "https://mern-app-api.vercel.app/news"
     )
       .then((response) => response.json())
       .then((n) => {
@@ -39,7 +39,7 @@ export default function IndexPage() {
 
   useEffect(() => {
     fetch(
-      "https://mern-app-ujee-dsrhw0npz-loncarevicpedja9-gmailcom.vercel.app/post"
+      "https://mern-app-api.vercel.app/post"
     ).then((response) => {
       response.json().then((posts) => {
         setPosts(posts);
