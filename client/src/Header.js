@@ -4,8 +4,9 @@ import { UserContext } from "./UserContext";
 
 export default function Header() {
   const { setUserInfo, userInfo } = useContext(UserContext);
+  const url = "https://mern-app-8nfom60ws-loncarevicpedja9-gmailcom.vercel.app";
   useEffect(() => {
-    fetch("https://mern-app-api.vercel.app/profile", {
+    fetch(`${url}/profile`, {
       credentials: "include",
     }).then((response) => {
       response.json().then((userInfo) => {
@@ -15,7 +16,7 @@ export default function Header() {
   }, []);
 
   function logout() {
-    fetch("https://mern-app-api.vercel.app/logout", {
+    fetch(`${url}/logout`, {
       credentials: "include",
       method: "POST",
     });

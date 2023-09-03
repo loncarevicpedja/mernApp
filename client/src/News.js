@@ -12,12 +12,12 @@ export default function News({
 }) {
   const { userInfo } = useContext(UserContext);
   const username = userInfo.username ? userInfo.username : null;
-
+  const url = "https://mern-app-8nfom60ws-loncarevicpedja9-gmailcom.vercel.app";
   function DeleteNews(e) {
     e.preventDefault();
     const id = _id;
     console.log(id);
-    fetch(`https://mern-app-api.vercel.app/deletenews/${_id}`, {
+    fetch(`${url}/${_id}`, {
       method: "DELETE",
       credentials: "include",
     })

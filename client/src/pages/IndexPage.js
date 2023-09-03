@@ -15,8 +15,8 @@ export default function IndexPage() {
 
   useEffect(() => {
     const url =
-      "https://mern-app-lqi0cg76g-loncarevicpedja9-gmailcom.vercel.app/exhibition";
-    fetch(url)
+      "https://mern-app-8nfom60ws-loncarevicpedja9-gmailcom.vercel.app";
+    fetch(`${url}/exhibition`)
       .then((response) => response.json())
       .then((data) => {
         setExhibitions(data);
@@ -25,9 +25,7 @@ export default function IndexPage() {
         console.error("Error fetching exhibitions:", error);
       });
 
-    fetch(
-      "https://mern-app-lqi0cg76g-loncarevicpedja9-gmailcom.vercel.app/news"
-    )
+    fetch(`${url}/news`)
       .then((response) => response.json())
       .then((n) => {
         setNews(n);
@@ -38,9 +36,7 @@ export default function IndexPage() {
   }, []);
 
   useEffect(() => {
-    fetch(
-      "https://mern-app-lqi0cg76g-loncarevicpedja9-gmailcom.vercel.app/post"
-    ).then((response) => {
+    fetch(`${url}/post`).then((response) => {
       response.json().then((posts) => {
         setPosts(posts);
       });

@@ -17,6 +17,7 @@ export default function Post({
   const [numLikes, setNumLikes] = useState(0);
   const { userInfo } = useContext(UserContext);
   const userId = userInfo.id ? userInfo.id : null;
+  const url = "https://mern-app-8nfom60ws-loncarevicpedja9-gmailcom.vercel.app";
   useEffect(() => {
     if (userId != null) {
       likes.forEach((like) => {
@@ -29,7 +30,7 @@ export default function Post({
   }, []);
   function Like() {
     const postId = _id;
-    fetch(`https://mern-app-api.vercel.app/${postId}`, {
+    fetch(`${url}/${postId}`, {
       method: "POST",
       body: JSON.stringify({ userId }),
       headers: {
@@ -48,7 +49,7 @@ export default function Post({
   }
   function Dislike() {
     const postId = _id; // Promenjeno ovde
-    fetch(`https://mern-app-api.vercel.app/${postId}`, {
+    fetch(`${url}/${postId}`, {
       method: "POST",
       body: JSON.stringify({ userId }),
       headers: {
@@ -70,7 +71,7 @@ export default function Post({
     e.preventDefault();
     const id = _id;
     console.log(id);
-    fetch(`https://mern-app-api.vercel.app/${id}`, {
+    fetch(`${url}/${id}`, {
       method: "DELETE",
       credentials: "include",
     })
@@ -104,7 +105,7 @@ export default function Post({
       </div>
       <div className="image-post">
         <Link to={`/post/${_id}`}>
-          <img src={"http://localhost:4000/" + cover} alt=""></img>
+          {/* <img src={"http://localhost:4000/" + cover} alt=""></img> */}
         </Link>
       </div>
       <div className="texts">
