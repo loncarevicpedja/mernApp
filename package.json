@@ -13,7 +13,8 @@
     "react-router-dom": "^6.14.2",
     "uuid": "^9.0.0",
     "scripts": {
-      "start": "node server.js"
+      "start": "node server.js",
+      "build": "echo \"No build specified\" && exit 1"
     }
   }
 }
