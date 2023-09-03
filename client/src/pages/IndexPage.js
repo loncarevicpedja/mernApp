@@ -14,9 +14,7 @@ export default function IndexPage() {
   }, []);
 
   useEffect(() => {
-    fetch(
-      "https://mern-app-8dnlnfqrm-loncarevicpedja9-gmailcom.vercel.app//exhibition"
-    )
+    fetch("https://mern-app-api.vercel.app/exhibition")
       .then((response) => response.json())
       .then((data) => {
         setExhibitions(data);
@@ -25,9 +23,7 @@ export default function IndexPage() {
         console.error("Error fetching exhibitions:", error);
       });
 
-    fetch(
-      "https://mern-app-8dnlnfqrm-loncarevicpedja9-gmailcom.vercel.app//news"
-    )
+    fetch("https://mern-app-api.vercel.app/news")
       .then((response) => response.json())
       .then((n) => {
         setNews(n);
@@ -38,9 +34,7 @@ export default function IndexPage() {
   }, []);
 
   useEffect(() => {
-    fetch(
-      "https://mern-app-8dnlnfqrm-loncarevicpedja9-gmailcom.vercel.app//post"
-    ).then((response) => {
+    fetch("https://mern-app-api.vercel.app/post").then((response) => {
       response.json().then((posts) => {
         setPosts(posts);
       });
