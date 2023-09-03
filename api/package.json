@@ -1,6 +1,8 @@
 {
-  "scripts": {
-    "start": "node index.js"
+  "dependencies": {
+    "scripts": {
+      "start": "node index.js"
+    }
   },
   "name": "api",
   "version": "1.0.0",
