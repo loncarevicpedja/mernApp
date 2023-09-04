@@ -4,7 +4,7 @@ import { UserContext } from "./UserContext";
 
 export default function Header() {
   const { setUserInfo, userInfo } = useContext(UserContext);
-  const url = "https://mern-app-api-loncarevicpedja9-gmailcom.vercel.app";
+  const url = "http://localhost:4000";
   useEffect(() => {
     fetch(`${url}/profile`, {
       credentials: "include",

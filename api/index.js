@@ -22,7 +22,7 @@ const secret = "dsad32dq";
 app.use(
   cors({
     credentials: true,
-    origin: "https://mern-app-frontend-green.vercel.app",
+    origin: "http://localhost:3000",
   })
 );
 
@@ -31,7 +31,7 @@ app.use(cookieParser());
 app.use("/uploads", express.static(__dirname + "/uploads"));
 
 mongoose.connect(
-  "mongodb+srv://loncarevicpedja:predrag21.07.2000.@cluster0.sedu4sh.mongodb.net/test?retryWrites=true&w=majority"
+  "mongodb+srv://loncarevicpedja:predrag21.07.2000.@cluster0.sedu4sh.mongodb.net/?retryWrites=true&w=majority"
 );
 
 const transporter = nodemailer.createTransport({

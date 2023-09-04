@@ -14,7 +14,7 @@ export default function IndexPage() {
   }, []);
 
   useEffect(() => {
-    const url = "https://mern-app-api-loncarevicpedja9-gmailcom.vercel.app";
+    const url = "http://localhost:4000";
     fetch(`${url}/exhibition`)
       .then((response) => response.json())
       .then((data) => {
