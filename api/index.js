@@ -22,7 +22,7 @@ const secret = "dsad32dq";
 app.use(
   cors({
     credentials: true,
-    origin: "http://localhost:3000",
+    origin: "https://mern-frontend-two-xi.vercel.app",
   })
 );
 
