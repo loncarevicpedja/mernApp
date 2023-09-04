@@ -17,7 +17,7 @@ export default function News({
     e.preventDefault();
     const id = _id;
     console.log(id);
-    fetch(`${url}/${_id}`, {
+    fetch(`${url}/deletenews/${_id}`, {
       method: "DELETE",
       credentials: "include",
     })
