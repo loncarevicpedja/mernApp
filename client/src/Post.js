@@ -17,7 +17,7 @@ export default function Post({
   const [numLikes, setNumLikes] = useState(0);
   const { userInfo } = useContext(UserContext);
   const userId = userInfo.id ? userInfo.id : null;
-  const url = "https://mernapp-production.up.railway.app";
+  const url = "http://localhost:4000";
   useEffect(() => {
     if (userId != null) {
       likes.forEach((like) => {

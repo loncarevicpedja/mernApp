@@ -13,7 +13,7 @@ export default function IndexPage() {
     setShowAnimation(true);
   }, []);
 
-  const url = "https://mernapp-production.up.railway.app";
+  const url = "http://localhost:4000";
   useEffect(() => {
     fetch(`${url}/exhibition`)
       .then((response) => response.json())
