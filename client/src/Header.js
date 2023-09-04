@@ -5,7 +5,7 @@ import UserSearch from "./UserSearch";
 
 export default function Header() {
   const { setUserInfo, userInfo } = useContext(UserContext);
-  const url = "https://mern-app-api.vercel.app";
+  const url = "https://mernapp-production.up.railway.app";
   useEffect(() => {
     fetch(`${url}/profile`, {
       credentials: "include",
