@@ -489,6 +489,25 @@ app.post("/dislike/:postId", async (req, res) => {
   }
 });
 
+app.get("/users/search", async (req, res) => {
+  const { name } = req.query;
+
+  if (!name) {
+    return res.status(400).json({ error: "Niste naveli ime za pretragu." });
+  }
+
+  try {
+    const results = await User.find({
+      name: { $regex: name, $options: "i" }, // "i" označava da je pretraga case-insensitive
+    });
+
+    res.json(results);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Greška pri pretrazi korisnika." });
+  }
+});
+
 app.listen(4000);
 
 module.exports = app;

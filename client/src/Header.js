@@ -1,6 +1,7 @@
 import { Link, Navigate } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "./UserContext";
+import UserSearch from "./UserSearch";
 
 export default function Header() {
   const { setUserInfo, userInfo } = useContext(UserContext);
@@ -46,6 +47,7 @@ export default function Header() {
         </svg>
       </Link>
       <nav>
+        <UserSearch />
         {username && username != "admin" ? (
           <>
             <Link to="/create">Ucestvujte u islozbi</Link>

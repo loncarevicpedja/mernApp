@@ -30,7 +30,7 @@ export default function Post({
   }, []);
   function Like() {
     const postId = _id;
-    fetch(`${url}/${postId}`, {
+    fetch(`${url}/like/${postId}`, {
       method: "POST",
       body: JSON.stringify({ userId }),
       headers: {
@@ -49,7 +49,7 @@ export default function Post({
   }
   function Dislike() {
     const postId = _id; // Promenjeno ovde
-    fetch(`${url}/${postId}`, {
+    fetch(`${url}/dislike/${postId}`, {
       method: "POST",
       body: JSON.stringify({ userId }),
       headers: {

@@ -398,6 +398,24 @@ div.post-page time {
   font-size: 0.7rem;
   color: #aaa;
 }
+div.search-result {
+  margin: 5px 0 5px 0;
+  background-color: #888;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+div.search-input-btn {
+  display: flex;
+  gap: 10px;
+}
+div.search-input-btn input {
+  width: 200px;
+}
+div.search-result a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
 div.post-page div.author {
   text-align: center;
   margin-bottom: 20px;
