@@ -5,7 +5,7 @@
   "author": "loncarevicpedja <loncarevicpedja2000@gmail.com>",
   "license": "UNLICENSED",
   "engines": {
-    "node": "14.x"
+    "node": "18.x"
   },
   "scripts": {
     "start": "node index.js"
