@@ -9,7 +9,7 @@ export default function Exhibition({
   isActual,
 }) {
   function DeleteExhibition(id) {
-    fetch(`https://mern-app-api.vercel.app/${id}`, {
+    fetch(`http://localhost:4000/${id}`, {
       method: "DELETE",
       credentials: "include",
     })
