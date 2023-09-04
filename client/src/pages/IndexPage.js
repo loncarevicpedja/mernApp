@@ -13,8 +13,8 @@ export default function IndexPage() {
     setShowAnimation(true);
   }, []);
 
+  const url = "http://localhost:4000";
   useEffect(() => {
-    const url = "http://localhost:4000";
     fetch(`${url}/exhibition`)
       .then((response) => response.json())
       .then((data) => {
