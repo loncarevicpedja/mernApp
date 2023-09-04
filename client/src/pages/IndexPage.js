@@ -13,7 +13,7 @@ export default function IndexPage() {
     setShowAnimation(true);
   }, []);
 
-  const url = "http://localhost:4000";
+  const url = "https://mern-api-gold-psi.vercel.app";
   useEffect(() => {
     fetch(`${url}/exhibition`)
       .then((response) => response.json())

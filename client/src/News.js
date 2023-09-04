@@ -12,7 +12,7 @@ export default function News({
 }) {
   const { userInfo } = useContext(UserContext);
   const username = userInfo.username ? userInfo.username : null;
-  const url = "http://localhost:4000";
+  const url = "https://mern-api-gold-psi.vercel.app";
   function DeleteNews(e) {
     e.preventDefault();
     const id = _id;
