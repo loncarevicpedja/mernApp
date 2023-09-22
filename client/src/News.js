@@ -12,7 +12,7 @@ export default function News({
 }) {
   const { userInfo } = useContext(UserContext);
   const username = userInfo.username ? userInfo.username : null;
-  const url = "https://mernapp-backend-p9uv.onrender.com";
+  const url = "http://localhost:4000";
   function DeleteNews(e) {
     e.preventDefault();
     const id = _id;

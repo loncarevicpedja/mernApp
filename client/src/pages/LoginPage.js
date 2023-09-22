@@ -29,15 +29,12 @@ export default function LoginPage() {
       alert("Morate popuniti sva polja pre nego što se prijavite.");
       return;
     }
-    const response = await fetch(
-      "https://mernapp-backend-p9uv.onrender.com/login",
-      {
-        method: "POST",
-        body: JSON.stringify({ username, password }),
-        headers: { "Content-Type": "application/json" },
-        credentials: "include",
-      }
-    );
+    const response = await fetch("http://localhost:4000/login", {
+      method: "POST",
+      body: JSON.stringify({ username, password }),
+      headers: { "Content-Type": "application/json" },
+      credentials: "include",
+    });
     if (response.ok) {
       response.json().then((userInfo) => {
         setUserInfo(userInfo);

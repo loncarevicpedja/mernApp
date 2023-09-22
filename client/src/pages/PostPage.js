@@ -10,7 +10,7 @@ export default function PostPage() {
   const { id } = useParams();
   useEffect(() => {
     if (id) {
-      fetch(`https://mernapp-backend-p9uv.onrender.com/post/${id}`)
+      fetch(`http://localhost:4000/post/${id}`)
         .then((response) => response.json())
         .then((postInfo) => {
           setPostInfo(postInfo);
@@ -50,10 +50,7 @@ export default function PostPage() {
         </div>
       )}
       <div className="image">
-        <img
-          src={`https://mernapp-backend-p9uv.onrender.com/${postInfo.cover}`}
-          alt=""
-        />
+        <img src={`http://localhost:4000/${postInfo.cover}`} alt="" />
       </div>
       <div
         className="content"

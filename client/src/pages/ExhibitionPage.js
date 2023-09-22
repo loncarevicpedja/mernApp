@@ -9,7 +9,7 @@ export default function ExhibitionPage() {
 
   useEffect(() => {
     if (id != null) {
-      fetch(`https://mernapp-backend-p9uv.onrender.com/exhibition/${id}`)
+      fetch(`http://localhost:4000/exhibition/${id}`)
         .then((response) => response.json())
         .then((exhibitionData) => {
           setExhibition(exhibitionData);
@@ -19,7 +19,7 @@ export default function ExhibitionPage() {
         });
     }
 
-    fetch("https://mernapp-backend-p9uv.onrender.com/post")
+    fetch("http://localhost:4000/post")
       .then((response) => response.json())
       .then((postsData) => {
         setPosts(postsData);

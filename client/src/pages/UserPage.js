@@ -9,7 +9,7 @@ export default function UserPage() {
   const [posts, setPosts] = useState([]);
   const { id } = useParams();
   function DeleteUser(id) {
-    fetch(`https://mernapp-backend-p9uv.onrender.com/deleteuser/${id}`, {
+    fetch(`http://localhost:4000/deleteuser/${id}`, {
       method: "DELETE",
       credentials: "include",
     })
@@ -28,7 +28,7 @@ export default function UserPage() {
       });
   }
   useEffect(() => {
-    fetch(`https://mernapp-backend-p9uv.onrender.com/profile/${id}`)
+    fetch(`http://localhost:4000/profile/${id}`)
       .then((response) => response.json())
       .then((u) => {
         setUser(u);
@@ -36,7 +36,7 @@ export default function UserPage() {
   }, []);
 
   useEffect(() => {
-    fetch(`https://mernapp-backend-p9uv.onrender.com/post`)
+    fetch(`http://localhost:4000/post`)
       .then((res) => res.json())
       .then((post) => {
         setPosts(post);
