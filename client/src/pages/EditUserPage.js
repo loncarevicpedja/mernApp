@@ -11,7 +11,7 @@ export default function EditUser() {
 
   useEffect(() => {
     if (id != null) {
-      fetch("http://localhost:4000/profile/" + id)
+      fetch("https://mernapp-backend-p9uv.onrender.com/profile/" + id)
         .then((response) => response.json())
         .then((userInfo) => {
           setUsername(userInfo.username);
@@ -30,11 +30,14 @@ export default function EditUser() {
     data.set("name", name);
     data.set("phone", phone);
     data.set("id", id);
-    const response = await fetch(`http://localhost:4000/updateuser/${id}`, {
-      method: "PUT",
-      body: data,
-      credentials: "include",
-    });
+    const response = await fetch(
+      `https://mernapp-backend-p9uv.onrender.com/updateuser/${id}`,
+      {
+        method: "PUT",
+        body: data,
+        credentials: "include",
+      }
+    );
     if (response.ok) {
       setRedirect(true);
     } else {

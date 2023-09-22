@@ -9,7 +9,7 @@ export default function Exhibition({
   isActual,
 }) {
   function DeleteExhibition(id) {
-    fetch(`http://localhost:4000/${id}`, {
+    fetch(`https://mernapp-backend-p9uv.onrender.com/${id}`, {
       method: "DELETE",
       credentials: "include",
     })
@@ -29,7 +29,7 @@ export default function Exhibition({
   }
 
   function EndExhibition(id) {
-    fetch(`http://localhost:4000/endexibition/${id}`)
+    fetch(`https://mernapp-backend-p9uv.onrender.com/endexibition/${id}`)
       .then((response) => response.json())
       .then((exInfo) => {
         console.log(exInfo);

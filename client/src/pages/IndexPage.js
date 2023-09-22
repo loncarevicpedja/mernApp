@@ -13,7 +13,7 @@ export default function IndexPage() {
     setShowAnimation(true);
   }, []);
 
-  const url = "http://localhost:4000";
+  const url = "https://mernapp-backend-p9uv.onrender.com";
   useEffect(() => {
     fetch(`${url}/exhibition`)
       .then((response) => response.json())

@@ -6,12 +6,14 @@ import Editor from "../Editor";
 export default function CreatePost() {
   const [exhibitions, setExhibitions] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:4000/exhibition").then((response) => {
-      response.json().then((exhibition) => {
-        setExhibitions(exhibition);
-        console.log(exhibition);
-      });
-    });
+    fetch("https://mernapp-backend-p9uv.onrender.com/exhibition").then(
+      (response) => {
+        response.json().then((exhibition) => {
+          setExhibitions(exhibition);
+          console.log(exhibition);
+        });
+      }
+    );
   }, []);
 
   const [title, setTitle] = useState("");
@@ -47,11 +49,14 @@ export default function CreatePost() {
     data.set("exhibition", exhibition);
     data.set("file", files[0]);
     ev.preventDefault();
-    const response = await fetch("http://localhost:4000/post", {
-      method: "POST",
-      body: data,
-      credentials: "include",
-    });
+    const response = await fetch(
+      "https://mernapp-backend-p9uv.onrender.com/post",
+      {
+        method: "POST",
+        body: data,
+        credentials: "include",
+      }
+    );
     if (response.ok) {
       setRedirect(true);
     }

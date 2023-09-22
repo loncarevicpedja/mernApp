@@ -6,12 +6,14 @@ import Exhibition from "../Exhibitions";
 export default function CreateExhibition() {
   const [exhibitions, setExhibitions] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:4000/exhibition").then((response) => {
-      response.json().then((exhibition) => {
-        setExhibitions(exhibition);
-        console.log(exhibition);
-      });
-    });
+    fetch("https://mernapp-backend-p9uv.onrender.com/exhibition").then(
+      (response) => {
+        response.json().then((exhibition) => {
+          setExhibitions(exhibition);
+          console.log(exhibition);
+        });
+      }
+    );
   }, []);
 
   const [title, setTitle] = useState("");
@@ -35,11 +37,14 @@ export default function CreateExhibition() {
 
   async function createNewExhibition(ev) {
     ev.preventDefault();
-    const response = await fetch("http://localhost:4000/exhibition", {
-      method: "POST",
-      body: JSON.stringify({ title, duration, description }),
-      headers: { "Content-Type": "application/json" },
-    });
+    const response = await fetch(
+      "https://mernapp-backend-p9uv.onrender.com/exhibition",
+      {
+        method: "POST",
+        body: JSON.stringify({ title, duration, description }),
+        headers: { "Content-Type": "application/json" },
+      }
+    );
     if (response.status === 200) {
       setRedirect(true);
       window.location.href = "/exhibition";

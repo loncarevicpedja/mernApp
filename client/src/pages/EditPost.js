@@ -13,17 +13,19 @@ export default function EditPost() {
 
   const [exhibitions, setExhibitions] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:4000/exhibition").then((response) => {
-      response.json().then((exhibition) => {
-        setExhibitions(exhibition);
-        console.log(exhibition);
-      });
-    });
+    fetch("https://mernapp-backend-p9uv.onrender.com/exhibition").then(
+      (response) => {
+        response.json().then((exhibition) => {
+          setExhibitions(exhibition);
+          console.log(exhibition);
+        });
+      }
+    );
   }, []);
 
   useEffect(() => {
     if (id != null) {
-      fetch("http://localhost:4000/post/" + id)
+      fetch("https://mernapp-backend-p9uv.onrender.com/" + id)
         .then((response) => response.json())
         .then((postInfo) => {
           setTitle(postInfo.title);
@@ -48,11 +50,14 @@ export default function EditPost() {
       data.set("file", files?.[0]);
     }
     data.set("exhibition", exhibition);
-    const response = await fetch("http://localhost:4000/post", {
-      method: "PUT",
-      body: data,
-      credentials: "include",
-    });
+    const response = await fetch(
+      "https://mernapp-backend-p9uv.onrender.com/post",
+      {
+        method: "PUT",
+        body: data,
+        credentials: "include",
+      }
+    );
     if (response.ok) {
       setRedirect(true);
     }
