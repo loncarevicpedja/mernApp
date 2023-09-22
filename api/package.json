@@ -8,7 +8,9 @@
     "node": "18.x"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "build": "npm i"
   },
   "keywords": [],
   "dependencies": {
