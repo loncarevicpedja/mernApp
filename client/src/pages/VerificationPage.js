@@ -6,7 +6,7 @@ export default function VerificationPage() {
   const parts = currentUrl.split("/");
   const value = parts[parts.length - 1];
   useEffect(() => {
-    fetch(`https://mernapp-backend-p9uv.onrender.com/verify/${value}`)
+    fetch(`http://localhost:4000/verify/${value}`)
       .then((response) => response.json())
       .then((postInfo) => {
         console.log(postInfo);

@@ -12,7 +12,7 @@ export default function News({
 }) {
   const { userInfo } = useContext(UserContext);
   const username = userInfo.username ? userInfo.username : null;
-  const url = "https://mernapp-backend-p9uv.onrender.com";
+  const url = "http://localhost:4000";
   function DeleteNews(e) {
     e.preventDefault();
     const id = _id;
@@ -39,10 +39,7 @@ export default function News({
     <div className="news">
       <div className="news-image">
         <Link to={`/news/${_id}`}>
-          <img
-            src={"https://mernapp-backend-p9uv.onrender.com/" + cover}
-            alt=""
-          ></img>
+          <img src={"http://localhost:4000/" + cover} alt=""></img>
         </Link>
       </div>
       <div className="news-content">

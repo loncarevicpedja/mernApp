@@ -24,7 +24,7 @@ export default function UserSearch() {
     try {
       // Napravite API poziv za pretragu korisnika
       const response = await fetch(
-        `https://mernapp-backend-p9uv.onrender.com/users/search?name=${searchText}`
+        `http://localhost:4000/users/search?name=${searchText}`
       );
 
       if (response.ok) {

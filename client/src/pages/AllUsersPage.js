@@ -4,13 +4,11 @@ import { useState, useEffect } from "react";
 export default function AllUSers() {
   const [users, setUsers] = useState([]);
   useEffect(() => {
-    fetch("https://mernapp-backend-p9uv.onrender.com/users").then(
-      (response) => {
-        response.json().then((u) => {
-          setUsers(u);
-        });
-      }
-    );
+    fetch("http://localhost:4000/users").then((response) => {
+      response.json().then((u) => {
+        setUsers(u);
+      });
+    });
   }, []);
   return (
     <div className="all-users-main">

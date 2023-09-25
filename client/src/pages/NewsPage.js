@@ -7,8 +7,8 @@ export default function News() {
   const { id } = useParams();
   useEffect(() => {
     if (id != null) {
-      fetch(`https://mernapp-backend-p9uv.onrender.com/news/${id}`).then(
-        (response) => response.json().then((n) => setNewsInfo(n))
+      fetch(`http://localhost:4000/news/${id}`).then((response) =>
+        response.json().then((n) => setNewsInfo(n))
       );
     }
   }, []);
@@ -20,10 +20,7 @@ export default function News() {
       <h1>{newsInfo.title}</h1>
       <time>{formatISO9075(new Date(newsInfo.createdAt))}</time>
       <div className="image">
-        <img
-          src={`https://mernapp-backend-p9uv.onrender.com/${newsInfo.cover}`}
-          alt=""
-        />
+        <img src={`http://localhost:4000/${newsInfo.cover}`} alt="" />
       </div>
       <div
         className="content"

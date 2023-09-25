@@ -18,14 +18,11 @@ export default function RegisterPage() {
       return;
     }
 
-    const response = await fetch(
-      "https://mernapp-backend-p9uv.onrender.com/register",
-      {
-        method: "POST",
-        body: JSON.stringify({ username, password, phone, name }),
-        headers: { "Content-Type": "application/json" },
-      }
-    );
+    const response = await fetch("http://localhost:4000/register", {
+      method: "POST",
+      body: JSON.stringify({ username, password, phone, name }),
+      headers: { "Content-Type": "application/json" },
+    });
 
     const data = await response.json();
 

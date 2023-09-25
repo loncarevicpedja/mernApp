@@ -17,7 +17,7 @@ export default function Post({
   const [numLikes, setNumLikes] = useState(0);
   const { userInfo } = useContext(UserContext);
   const userId = userInfo.id ? userInfo.id : null;
-  const url = "https://mernapp-backend-p9uv.onrender.com";
+  const url = "http://localhost:4000";
   useEffect(() => {
     if (userId != null) {
       likes.forEach((like) => {
@@ -105,10 +105,7 @@ export default function Post({
       </div>
       <div className="image-post">
         <Link to={`/post/${_id}`}>
-          <img
-            src={"https://mernapp-backend-p9uv.onrender.com/" + cover}
-            alt=""
-          ></img>
+          <img src={"http://localhost:4000/" + cover} alt=""></img>
         </Link>
       </div>
       <div className="texts">

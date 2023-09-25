@@ -6,7 +6,7 @@ import News from "../News";
 export default function CreateNews() {
   const [news, setNews] = useState([]);
   useEffect(() => {
-    fetch("https://mernapp-backend-p9uv.onrender.com/news").then((response) => {
+    fetch("http://localhost:4000/news").then((response) => {
       response.json().then((n) => {
         setNews(n);
         console.log(news);
@@ -40,14 +40,11 @@ export default function CreateNews() {
     data.set("summary", summary);
     data.set("content", content);
     data.set("file", files[0]);
-    const response = await fetch(
-      "https://mernapp-backend-p9uv.onrender.com/news",
-      {
-        method: "POST",
-        body: data,
-        credentials: "include",
-      }
-    );
+    const response = await fetch("http://localhost:4000/news", {
+      method: "POST",
+      body: data,
+      credentials: "include",
+    });
     if (response.ok) {
       window.location.href = "/news";
     } else {
