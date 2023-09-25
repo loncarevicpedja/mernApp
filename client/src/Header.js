@@ -5,7 +5,7 @@ import UserSearch from "./UserSearch";
 
 export default function Header() {
   const { setUserInfo, userInfo } = useContext(UserContext);
-  const url = "http://localhost:4000";
+  const url = "https://mernapp-backend-p9uv.onrender.com";
   useEffect(() => {
     fetch(`${url}/profile`, {
       credentials: "include",

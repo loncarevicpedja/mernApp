@@ -35,7 +35,7 @@ mongoose.connect(
 );
 
 const transporter = nodemailer.createTransport({
-  service: "Gmail", // Možete koristiti drugi servis ili podešavanja
+  service: "Gmail",
   auth: {
     user: "onlineizlozba@gmail.com",
     pass: "itsagqlnhszuitgr",

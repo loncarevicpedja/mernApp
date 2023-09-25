@@ -4,7 +4,7 @@ import News from "../News";
 export default function AllNews() {
   const [news, setNews] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:4000/news")
+    fetch("https://mernapp-backend-p9uv.onrender.com/news")
       .then((response) => response.json())
       .then((n) => {
         setNews(n);

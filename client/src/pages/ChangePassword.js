@@ -18,13 +18,16 @@ export default function ChangePassword() {
       return;
     }
 
-    const response = await fetch(`http://localhost:4000/${id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ currentPassword, newPassword }),
-    });
+    const response = await fetch(
+      `https://mernapp-backend-p9uv.onrender.com/${id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ currentPassword, newPassword }),
+      }
+    );
 
     const data = await response.json();
 

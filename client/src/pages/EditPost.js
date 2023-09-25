@@ -50,11 +50,14 @@ export default function EditPost() {
       data.set("file", files?.[0]);
     }
     data.set("exhibition", exhibition);
-    const response = await fetch("http://localhost:4000/post", {
-      method: "PUT",
-      body: data,
-      credentials: "include",
-    });
+    const response = await fetch(
+      "https://mernapp-backend-p9uv.onrender.com/post",
+      {
+        method: "PUT",
+        body: data,
+        credentials: "include",
+      }
+    );
     if (response.ok) {
       setRedirect(true);
     }
